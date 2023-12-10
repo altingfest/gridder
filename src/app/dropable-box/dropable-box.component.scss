@@ -1,0 +1,51 @@
+@use '@angular/material' as mat;
+@use "sass:map";
+
+$green: map.get(mat.$green-palette, 500);
+
+.dropable-box {
+  background-color: #9b9b9b;
+  background-size:cover;
+  background-position:center;
+  background-repeat: no-repeat;
+  border: 3px solid #3F51B500;
+  transition: border 200ms;
+  overflow: hidden;
+
+  &.ondragover {
+    border: 3px solid #536bee;
+  }
+
+  &_action_item {
+    display: inline-block;
+    position: relative;
+    top: -40px;
+    margin: 5px;
+    transition: top 100ms;
+    transition-delay: 50ms;
+    cursor: pointer;
+    &:nth-child(2) {
+      transition-delay: 80ms;
+    }
+  }
+
+  &_actions {
+    opacity: 0;
+    transition: opacity 200ms;
+  }
+
+  &.dropped {
+    cursor: pointer;
+    border: 3px solid #ff4081;
+    &.locked {
+      border: 3px solid $green;
+    }
+  }
+
+  &.dropped.onhover &_actions {
+    opacity: 1;
+    & > div {
+      top: 0px;
+    }
+  }
+}

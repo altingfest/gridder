@@ -1,0 +1,25 @@
+<div class="gr-grid">
+  <div class="gr-grid_controls">
+    <button mat-fab color="primary" (click)="addRow()">
+      <mat-icon>add_box</mat-icon>
+    </button>
+
+    <button mat-fab color="primary" (click)="shuffle()">
+      <mat-icon>shuffle</mat-icon>
+    </button>
+  </div>
+  <div class="gr-grid_grid">
+    <div *ngFor="let row of items" class="gr-grid_row">
+      <div *ngFor="let item of row" class="gr-grid_item">
+        <gr-dropable-box
+          width="200px"
+          height="200px"
+          id={{item.id}}
+          src={{item.src}}
+          (onLockChange)="updateLockState($event)"
+        ></gr-dropable-box>
+      </div>
+    </div>
+  </div>
+</div>
+

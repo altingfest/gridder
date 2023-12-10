@@ -1,0 +1,33 @@
+<div class="dropable-box"
+     (drop)="onDrop($event)"
+     (dragover)="onDragOver($event)"
+     (dragleave)="onDragLeave($event)"
+     [style.backgroundImage]="imageUrl"
+     [style.width]=width
+     [style.height]=height
+     [class.ondragover]="isOnDragOver"
+     [class.dropped]="isDropped"
+     [class.onhover]="isMouseOver"
+     [class.locked]="isLocked"
+>
+  <div class="dropable-box_actions">
+    <div class="dropable-box_action_item"
+         (mouseover)="onLockOver()"
+         (mouseleave)="onLockLeave()"
+         (click)="onLockClick()"
+    >
+      <button mat-mini-fab color="accent">
+        <mat-icon>{{lockerIcon}}</mat-icon>
+      </button>
+    </div>
+
+    <div class="dropable-box_action_item"
+         (click)="onClear()"
+    >
+      <button mat-mini-fab color="accent">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </div>
+<!--    <mat-icon>lock_open</mat-icon>-->
+  </div>
+</div>

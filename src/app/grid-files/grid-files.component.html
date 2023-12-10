@@ -1,0 +1,27 @@
+<div class="grid-files">
+  <div class="grid-files_load">
+
+    <button mat-fab extended color="primary" (click)="filesInput.click()">
+      <mat-icon>add_photo_alternate</mat-icon>
+      Choose Images
+    </button>
+    <input
+      #filesInput
+      hidden
+      multiple
+      (change)="onFileSelected()"
+      type="file"
+      id="filesInput"
+      accept=".jpg,.jpeg,.png"
+    >
+  </div>
+  <mat-divider></mat-divider>
+  <div class="grid-files_content" #loadGrid id="loadGrid">
+    <ng-template ngFor let-image [ngForOf]="images">
+      <img src={{image.src}} draggable="true" (dragstart)="onDragStart($event)"/>
+    </ng-template>
+  </div>
+</div>
+
+
+

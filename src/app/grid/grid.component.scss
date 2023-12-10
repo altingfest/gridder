@@ -1,0 +1,41 @@
+$grid-item-size: 200px;
+
+.gr-grid {
+  height: calc(100vh - 80px - 37px);
+  overflow: scroll;
+  &_grid {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  &_controls {
+    & > button {
+      margin: 5px;
+    }
+  }
+
+  &_row {
+    display: flex;
+    flex-direction: row-reverse;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    margin: 10px 0px;
+  }
+
+  &_item {
+    width: $grid-item-size;
+    height: $grid-item-size;
+    background-color: aqua;
+    margin: 0px 10px;
+    display: flex;
+    justify-content: center;
+    //&>img {
+    //  min-height: 100%;
+    //  min-width: 100%;
+    //  overflow: hidden;
+    //  height: 100%;
+    //}
+  }
+}
