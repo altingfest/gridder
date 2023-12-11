@@ -1,0 +1,139 @@
+$size: 60px;
+$primary: #648AEB;
+$yellow: #FAAD39;
+$pink: #E198EC;
+$violet: #885AD4;
+$br_radius: 10px;
+$pad: 9px;
+$pag: 6px;
+$sq_size: 10px;
+$grid1: $pad;
+$grid2: $pad + $sq_size + $pag;
+$grid3: $pad + $sq_size + $pag + $sq_size + $pag;
+
+
+.gr-logo {
+  width: $size;
+  height: $size;
+  background: $primary;
+  box-shadow: inset 0 0 15px rgba(0,0,0,0.4);
+  border-radius: $br_radius;
+  position: relative;
+  &_lg {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(44, 70, 136, 0.25), rgba(212, 221, 246, 0.25));
+    border-radius: $br_radius;
+  }
+
+  &_sq {
+    position: absolute;
+    width: $sq_size;
+    height: $sq_size;
+    box-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+    transition: top 150ms, left 200ms;
+    &.pink {
+      background-color: $pink;
+    }
+    &.yellow {
+      background-color: $yellow;
+    }
+    &.violet {
+      background-color: $violet;
+    }
+
+    &:nth-child(1) {
+      top: $grid1;
+      left: $grid1;
+    }
+
+    &:nth-child(2) {
+      top: $grid1;
+      left: $grid2;
+    }
+
+    &:nth-child(3) {
+      top: $grid1;
+      left: $grid3;
+    }
+
+    &:nth-child(4) {
+      top: $grid2;
+      left: $grid1;
+    }
+
+    &:nth-child(5) {
+      top: $grid2;
+      left: $grid2;
+    }
+
+    &:nth-child(6) {
+      top: $grid2;
+      left: $grid3;
+    }
+
+    &:nth-child(7) {
+      top: $grid3;
+      left: $grid1;
+    }
+
+    &:nth-child(8) {
+      top: $grid3;
+      left: $grid2;
+    }
+
+    &:nth-child(9) {
+      top: $grid3;
+      left: $grid3;
+    }
+  }
+}
+
+.gr-logo.shuffle {
+  & .gr-logo_sq {
+    &:nth-child(1) {
+      top: $grid1;
+      left: $grid3;
+    }
+
+    &:nth-child(2) {
+      top: $grid2;
+      left: $grid2;
+    }
+
+    &:nth-child(3) {
+      top: $grid1;
+      left: $grid2;
+    }
+
+    &:nth-child(4) {
+      top: $grid1;
+      left: $grid1;
+    }
+
+    &:nth-child(5) {
+      top: $grid2;
+      left: $grid1;
+    }
+
+    &:nth-child(6) {
+      top: $grid3;
+      left: $grid3;
+    }
+
+    &:nth-child(7) {
+      top: $grid3;
+      left: $grid2;
+    }
+
+    &:nth-child(8) {
+      top: $grid3;
+      left: $grid1;
+    }
+
+    &:nth-child(9) {
+      top: $grid2;
+      left: $grid3;
+    }
+  }
+}

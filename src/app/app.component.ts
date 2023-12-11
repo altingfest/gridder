@@ -4,6 +4,7 @@ import { RouterOutlet } from '@angular/router';
 import { GridFilesComponent } from './grid-files/grid-files.component';
 import { GridComponent } from './grid/grid.component';
 import { MatDividerModule } from '@angular/material/divider';
+import { LogoComponent } from './logo/logo.component';
 
 @Component({
   selector: 'app-root',
@@ -13,7 +14,8 @@ import { MatDividerModule } from '@angular/material/divider';
     RouterOutlet,
     GridFilesComponent,
     GridComponent,
-    MatDividerModule
+    MatDividerModule,
+    LogoComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
