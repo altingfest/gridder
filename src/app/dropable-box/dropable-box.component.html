@@ -9,6 +9,7 @@
      [class.dropped]="isDropped"
      [class.onhover]="isMouseOver"
      [class.locked]="isLocked"
+     [class.flipped]="isFlipped"
 >
   <div class="dropable-box_actions">
     <div class="dropable-box_action_item"
@@ -28,6 +29,13 @@
         <mat-icon>delete</mat-icon>
       </button>
     </div>
-<!--    <mat-icon>lock_open</mat-icon>-->
+
+    <div class="dropable-box_action_item"
+         (click)="toggleFlip()"
+    >
+      <button mat-mini-fab color="accent">
+        <mat-icon>flip</mat-icon>
+      </button>
+    </div>
   </div>
 </div>

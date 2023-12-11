@@ -9,7 +9,7 @@ $green: map.get(mat.$green-palette, 500);
   background-position:center;
   background-repeat: no-repeat;
   border: 3px solid #3F51B500;
-  transition: border 200ms;
+  transition: border 200ms, transform 100ms;
   overflow: hidden;
 
   &.ondragover {
@@ -39,6 +39,10 @@ $green: map.get(mat.$green-palette, 500);
     border: 3px solid #ff4081;
     &.locked {
       border: 3px solid $green;
+    }
+
+    &.flipped {
+      transform: scaleX(-1);
     }
   }
 

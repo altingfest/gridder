@@ -33,6 +33,7 @@ export class DropableBoxComponent implements OnChanges {
   public isMouseOver: boolean = false;
   public isLocked: boolean = false;
   public lockerIcon: string = 'lock_open';
+  public isFlipped: boolean = false;
 
   @Input()
   set src(value: string) {
@@ -100,6 +101,10 @@ export class DropableBoxComponent implements OnChanges {
     this.isDropped = false;
     this.src = '';
     this.isLocked = false;
+  }
+
+  toggleFlip() {
+    this.isFlipped = !this.isFlipped;
   }
 
   ngOnChanges(changes: SimpleChanges) {
