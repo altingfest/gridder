@@ -5,6 +5,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { DropableBoxComponent } from '../dropable-box/dropable-box.component';
 import { ImagesService } from '../images.service';
 import { MatDividerModule } from '@angular/material/divider';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 const GRID_COLS = 3;
 
@@ -16,7 +17,7 @@ interface GridItemProps {
 @Component({
   selector: 'gr-grid',
   standalone: true,
-  imports: [CommonModule, MatButtonModule, MatIconModule, DropableBoxComponent, MatDividerModule],
+  imports: [CommonModule, MatButtonModule, MatIconModule, DropableBoxComponent, MatDividerModule, MatTooltipModule],
   templateUrl: './grid.component.html',
   styleUrl: './grid.component.scss'
 })
