@@ -7,14 +7,18 @@
     <button mat-fab color="primary" (click)="shuffle()" matTooltip="Shuffle grid">
       <mat-icon>shuffle</mat-icon>
     </button>
+
+    <mat-slider class="gr-grid_size-slider" [min]="0.5" [max]="1.5" [step]="0.1">
+      <input matSliderThumb [(ngModel)]="gridScale" #slider>
+    </mat-slider>
   </div>
   <mat-divider></mat-divider>
   <div class="gr-grid_grid">
     <div *ngFor="let row of items" class="gr-grid_row">
       <div *ngFor="let item of row" class="gr-grid_item">
         <gr-dropable-box
-          width="200px"
-          height="200px"
+          width="{{gridScale * 200}}px"
+          height="{{gridScale * 200}}px"
           id={{item.id}}
           src={{item.src}}
           (onLockChange)="updateLockState($event)"

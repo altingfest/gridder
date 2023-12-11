@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
@@ -6,6 +6,8 @@ import { DropableBoxComponent } from '../dropable-box/dropable-box.component';
 import { ImagesService } from '../images.service';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatSliderModule } from '@angular/material/slider';
+import { FormsModule } from '@angular/forms';
 
 const GRID_COLS = 3;
 
@@ -17,12 +19,22 @@ interface GridItemProps {
 @Component({
   selector: 'gr-grid',
   standalone: true,
-  imports: [CommonModule, MatButtonModule, MatIconModule, DropableBoxComponent, MatDividerModule, MatTooltipModule],
+  imports: [
+    CommonModule,
+    MatButtonModule,
+    MatIconModule,
+    DropableBoxComponent,
+    MatDividerModule,
+    MatTooltipModule,
+    MatSliderModule,
+    FormsModule,
+  ],
   templateUrl: './grid.component.html',
   styleUrl: './grid.component.scss'
 })
 export class GridComponent {
   public items: GridItemProps[][] = [];
+  public gridScale: number = 1;
 
   constructor(private imagesService: ImagesService) {
   }
