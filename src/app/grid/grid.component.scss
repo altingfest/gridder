@@ -1,11 +1,11 @@
 $grid-item-size: 200px;
 
 .gr-grid {
-  height: calc(100vh - 80px - 37px);
-  overflow: scroll;
   &_grid {
     display: flex;
     flex-direction: column-reverse;
+    height: calc(100vh - 80px - 66px);
+    overflow: scroll;
   }
 
   &_controls {
